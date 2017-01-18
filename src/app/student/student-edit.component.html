@@ -1,0 +1,59 @@
+<h1>Edit Student</h1>
+<form #studentForm="ngForm">
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    <input type="text"
+           id="first_name"
+           class="form-control"
+           name="first_name"
+           [(ngModel)]="student.first_name"
+    >
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input type="text"
+           class="form-control"
+           id="last_name"
+           name="last_name"
+           [(ngModel)]="student.last_name"
+    >
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="text"
+           class="form-control"
+           name="phone"
+           id="phone"
+           [(ngModel)]="student.phone"
+    >
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email"
+           class="form-control"
+           name="email"
+           id="email"
+           [(ngModel)]="student.email"
+    >
+  </div>
+  <div class="form-group">
+    <label for="parent_phone">Parent Phone</label>
+    <input type="text"
+           class="form-control"
+           name="parent_phone"
+           id="parent_phone"
+           [(ngModel)]="student.parent_phone"
+    >
+  </div>
+  <div class="form-group">
+    <label for="parent_email">Parent Email</label>
+    <input type="text"
+           class="form-control"
+           name="parent_email"
+           id="parent_email"
+           [(ngModel)]="student.parent_email"
+    >
+  </div>
+  <button class="btn btn-primary" type="button" (click)="updateStudent(student)">Update</button>
+</form>
+

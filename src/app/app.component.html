@@ -1,3 +1,35 @@
-<h1>
-  {{title}}
-</h1>
+<simple-notifications [options]="notification_options"></simple-notifications>
+<nav class="navbar navbar-fixed-top navbar-toggleable-md navbar-light bg-faded">
+  <div class='container'>
+    <a class="navbar-brand" href="#">Schooly</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/home">Classes</a>
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="student-menu" ngbDropdownToggle>Students</button>
+            <div class="dropdown-menu" aria-labelledby="student-menu">
+              <button class="dropdown-item" routerLink='/students' [routerLinkActiveOptions]='{exact: true}' routerLinkActive="active">List Students</button>
+              <button class="dropdown-item" routerLink='/students/new' routerLinkActive="active">New Student</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn" id="teachers-menu" ngbDropdownToggle>Teachers</button>
+            <div class="dropdown-menu" aria-labelledby="teachers-menu">
+              <button class="dropdown-item" routerLink='/teachers' [routerLinkActiveOptions]='{exact: true}' routerLinkActive="active">List Teachers</button>
+              <button class="dropdown-item" routerLink='/teachers/new' routerLinkActive="active">New Teacher</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
